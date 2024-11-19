@@ -1,6 +1,6 @@
 # Django HTMX Calculator
 
-| Note is the a draft README file for the end users, to be updated/modified by the candiate, and then renamed `README.md`
+> Note is the a draft README file for the end users, to be updated/modified by the candiate, and then renamed `README.md`
 
 ### Description
 

@@ -1,8 +1,8 @@
 # Django HTMX Calculator - Practical Test - Guidelines for the candidate
 
-| Note is the a draft README file for the candidates. It contains the guidelines for the test, and the description of the app to be developed. The candidate should rename this file `test_guidelines.md` before submitting the test.
+> Note is the temporary README file for the candidates. It contains the guidelines for the test, and the description of the app to be developed. The candidate should rename this file `guidelines.md` before submitting the test.
 
-### Description
+## Description
 
 This repo provides the scaffolding for a simple app designed to test your knowledge of:
 
@@ -12,9 +12,9 @@ This repo provides the scaffolding for a simple app designed to test your knowle
 
 This tech stack is a potential solution for the FlexUp MVP project, prioritizing basic functionalities while minimizing the front-end development workload. The UI/UX may be enhanced in later phases.
 
-The purpose of this test is to assess your proficiency with the mentioned technologies and your ability to work with a simple front-end application. Please aim to complete the test within 4 hours.
+The purpose of this test is to assess your proficiency with the mentioned technologies and your ability to work with a simple front-end application. If you are already familiar with these technologies, should should aim to complete the test within 4 hours.
 
-### App specifications / coding exercise
+## App specifications / coding exercise
 
 The root folder contains a simple stand-alone `calculator.html` page, in which the user can enter a product with the name, price and tax information. The unique feature of this page is that users can provide any two of the three numerical values (price excluding tax, price including tax, and tax rate), and the JavaScript will automatically calculate the third value.
 
@@ -53,14 +53,16 @@ Your task is to build a Django application based on this page. The app should al
 - The user should be able to:
   - Click "View/Edit" to populate the form with a product's details. The header and list should remain unchanged.
   - Click "Delete" to remove the product from the database and update the table. The header and form should remain unchanged.
-- Column headers should be in "Title Case"
-- The page should never reload or redirect to another page.
-- Use HTMX for dynamic updates:
+- The page should never reload or redirect to another page. Use HTMX for dynamic updates:
   - When a product is added, updated, or deleted, only the affected row should update in the table.
   - The header and form should remain static.
-- Use the default Django SQLite database
+- Use the default Django SQLite database. Only the following fields should be stored in the database:
+  - Name
+  - Price Excluding Tax
+  - Tax Rate
+- Note that it does not matter how the user has entered the data (e.g. price excluding tax, price including tax, or tax rate). The app should always store the data in the database as price excluding tax and tax rate.
 
-## Submission Instructions
+## Test Submission Instructions
 
 1. Clone or fork this repository to start working on your solution.
 2. Implement the required features.
@@ -72,5 +74,6 @@ Your task is to build a Django application based on this page. The app should al
 
 - Time Management: Aim to complete the test in less than 4 hours. Focus on functionality rather than design.
 - Best Practices: Follow Django conventions for code organization and use HTMX effectively for a seamless user experience.
-- Update the `README_to_be_updated.md` file with any changes & additional information you think is relevant.
+- Update the `README_to_be_updated.md` file with any changes & additional information you think is relevant and rename it `README.md`.
+- Rename the current `REAMDE.md` file to `guidelines.md` before submitting the test.
 - Structure the project in a way that is clean and easy to understand, following best practices. Make sure to include the required files (e.g. `requirements.txt`, `.gitignore`, etc.).
