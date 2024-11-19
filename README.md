@@ -1,21 +1,76 @@
-# Django HTMX Calculator
+# Django HTMX Calculator - Practical Test - Guidelines for the candidate
 
-<!-- Note is the a draft README file, to be updated/modified by the candiate -->
+| Note is the a draft README file for the candidates. It contains the guidelines for the test, and the description of the app to be developed. The candidate should rename this file `test_guidelines.md` before submitting the test.
 
 ### Description
 
-This applicable is a simple Django app that allows the user to store the products in a database, and to display them in a list. The user should be able to click on a product in the list to see the details of the product, and to edit the product.
-The user can provide the price and tax information for the product in a flexible way, and the app will calculate the missing value.
+This repo provides the scaffolding for a simple app designed to test your knowledge of:
 
-### Installation
+- Django,
+- Django templating,
+- HTMX.
 
-- `python -m venv .venv`: to create a virtual environment in the root folder
-- `.venv\Scripts\activate`: to activate it using a build in script
-- `pip install -r requirements.txt`: install all the dependencies with
-- `python manage.py makemigrations`: make the migrations
-- `python manage.py migrate`: run the migrations
-- `python manage.py runserver`: start the server
+This tech stack is a potential solution for the FlexUp MVP project, prioritizing basic functionalities while minimizing the front-end development workload. The UI/UX may be enhanced in later phases.
 
-### Usage
+The purpose of this test is to assess your proficiency with the mentioned technologies and your ability to work with a simple front-end application. Please aim to complete the test within 4 hours.
 
-- Open browser on http://localhost:8000/ to see the app
+### App specifications / coding exercise
+
+The root folder contains a simple stand-alone `calculator.html` page, in which the user can enter a product with the name, price and tax information. The unique feature of this page is that users can provide any two of the three numerical values (price excluding tax, price including tax, and tax rate), and the JavaScript will automatically calculate the third value.
+
+Your task is to build a Django application based on this page. The app should allow users to:
+
+- Store products in a database
+- Display the stored products in a list
+- View, edit, and delete products
+
+### User stories / features:
+
+1. Create a new product.
+2. List all products.
+3. View a product's details.
+4. Edit a product.
+5. Delete a product.
+
+### Requirements:
+
+- The Django app has a single page, that contains:
+  - A header titled "Tax Calculator".
+  - A form for entering product details.
+  - A table listing all products (you will need to create this table).
+- The same form should be used for creating, viewing, and editing a product.
+- When the user submits the form:
+  - The product should be saved to the database.
+  - The product list should update dynamically.
+  - The form should reset (cleared)
+- The list of all products should be on the same page, as table, under the form, and contain the following columns:
+  - Name
+  - Price Excluding Tax
+  - Tax Rate
+  - Price Including Tax
+  - A "View/Edit" button
+  - A "Delete" button
+- The user should be able to:
+  - Click "View/Edit" to populate the form with a product's details. The header and list should remain unchanged.
+  - Click "Delete" to remove the product from the database and update the table. The header and form should remain unchanged.
+- Column headers should be in "Title Case"
+- The page should never reload or redirect to another page.
+- Use HTMX for dynamic updates:
+  - When a product is added, updated, or deleted, only the affected row should update in the table.
+  - The header and form should remain static.
+- Use the default Django SQLite database
+
+## Submission Instructions
+
+1. Clone or fork this repository to start working on your solution.
+2. Implement the required features.
+3. Push your changes to your own GitHub repository.
+4. Make your repository private and invite me (`fabrizionastri`) as a collaborator.
+5. Send me an email to let me know that you have completed the test with a link to your repository.
+
+## Additional Notes:
+
+- Time Management: Aim to complete the test in less than 4 hours. Focus on functionality rather than design.
+- Best Practices: Follow Django conventions for code organization and use HTMX effectively for a seamless user experience.
+- Update the `README_to_be_updated.md` file with any changes & additional information you think is relevant.
+- Structure the project in a way that is clean and easy to understand, following best practices. Make sure to include the required files (e.g. `requirements.txt`, `.gitignore`, etc.).
